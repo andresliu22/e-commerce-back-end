@@ -18,14 +18,14 @@ These instructions will get you a copy of the project up and running on your loc
 * Start your testing opening your terminal or command line and going to the repository location on your machine.
 * Type the command "npm install" to get the libraries used in this project.
 * Create your own .env file and set environment variables of your MySQL username, password and database which are used on connection.js located in the config directory.
-* Go to the db directory and run the command "mysql -u root -p" to enter to MySQL and run command "source schema.sql" to create the database.
+* Go to the db directory and run the command "mysql -u (your_username) -p" to enter to MySQL and run command "source schema.sql" to create the database.
 * Go to the root directory and type the command "npm run seed" to create the tables on your database based on the models and populate them with data.
 * Type the command "npm start" to start the app.
 * Open Insomnia, Postman or your application of API testing of preference and start managing the data making API calls to the app.
 
 ## Walkthrough Video
 
-* [Link To Video](https://watch.screencastify.com/v/pY5V7yvZvn5eEP0GD1Ej)
+* [Link To Video](https://watch.screencastify.com/v/KdpskzfPsgTAiVoNZokD)
 
 ## Prerequisites
 
