@@ -7,7 +7,9 @@ router.get('/', async(req, res) => {
   // find all categories
   // be sure to include its associated Products
   try {
-    const result = await Category.findAll();
+    const result = await Category.findAll({
+      include: [{ model: Product }]
+    });
     if (result) {
       res.status(200).json(result);
     } else {
@@ -24,7 +26,9 @@ router.get('/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
-    const result = await Category.findByPk(req.params.id);
+    const result = await Category.findByPk(req.params.id, {
+      include: [{ model: Product }]
+    });
     if (result) {
       res.status(200).json(result);
     } else {
@@ -54,13 +58,12 @@ router.post('/', async (req, res) => {
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
-    const result = await Category.findByPk({
+    const result = await Category.update(req.body, {
       where: {
         id: req.params.id
       }
     })
     if (result) {
-      result.name = req.body.name;
       res.status(200).json(result);
     } else {
       res.status(404).json({ message: 'No information found' });
